@@ -5,17 +5,7 @@ public class week1nine {
     int n = sc.nextInt();
     int n1 = n;
     int rev = sc.nextInt();
-    // int rem = 0;
-    // if (n >= 0 && n <= 9) {
-    //   rev = n;
-    // } else {
-    //   while (n != 0) {
-    //     rem = n % 10;
-    //     rev = rev * 10 + rem;
-    //     n = n / 10;
-    //   }
-    // }
-    // System.out.println((Math.pow(n,rev))%((Math.pow(10,7))+7));
+
     long result = power(n1, rev);
     System.out.println((int)result);
     sc.close();

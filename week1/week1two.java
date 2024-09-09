@@ -13,7 +13,7 @@ public class week1two {
        res=2;
     }
     else if(num1==0 || num2==0 ){
-      res=0;
+      res=3;
     }  
     else{
       res = 1;
