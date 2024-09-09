@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class week1ten {
@@ -11,7 +12,7 @@ public class week1ten {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        System.out.println(Meanofarr(arr, n));
+        System.out.println(formatMean(Meanofarr(arr, n)));
         sc.close();
     }
 
@@ -23,5 +24,13 @@ public class week1ten {
         double sum = (n - 1) * mean1 + arr[n - 1];
         double mean = sum / (double) n;
         return mean;
+    }
+        public static String formatMean(double mean) {
+        if (mean % 1 == 0) {
+            return String.valueOf((int) mean);
+        } else {
+            DecimalFormat df = new DecimalFormat("#.##");
+            return df.format(mean);
+        }
     }
 }
