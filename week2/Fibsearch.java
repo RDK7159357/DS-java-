@@ -1,13 +1,14 @@
 import java.util.*;
+
 public class Fibsearch {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
- 
+
         int n = sc.nextInt();
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
-        }       
+        }
         int key = sc.nextInt();
         int index = fibsearch(arr, key);
         if (index >= 0) {
@@ -40,15 +41,21 @@ public class Fibsearch {
 
             if (key > arr[i]) {
                 // Key is greater, move the window to the right
-                fib = fib2;
-                fib2 = fib1;
-                fib1 = fib - fib2;
+                // fib = fib2;
+                // fib2 = fib1;
+                // fib1 = fib - fib2;
+                fib = fib1;
+                fib1 = fib2;
+                fib2 = fib - fib1;
                 offset = i;
             } else if (key < arr[i]) {
                 // Key is smaller, move the window to the left
-                fib = fib1;
-                fib2 = fib2 - fib1;
-                fib1 = fib - fib2;
+                // fib = fib1;
+                // fib2 = fib2 - fib1;
+                // fib1 = fib - fib2;
+                fib = fib2;
+                fib1 = fib1 - fib;
+                fib2 = fib - fib1;
             } else {
                 // Key found
                 return i;

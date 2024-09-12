@@ -1,37 +1,67 @@
 import java.util.Scanner;
+
 public class Lsearch {
-  public static void main(String args[]){
+  public static void main(String args[]) {
     Scanner sc = new Scanner(System.in);
-         String s = sc.nextLine();
-        int key = sc.nextInt();
-        String[] srr = s.split(",");
-        int n = srr.length;
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(srr[i].trim());
-        }
-        System.out.print(LinearSearchRecursive(arr, n, key, 0));
-        sc.close();
-	
+    String s = sc.nextLine();
+    int key = sc.nextInt();
+    String[] srr = s.split(",");
+    int n = srr.length;
+    int[] arr = new int[n];
+    for (int i = 0; i < n; i++) {
+      arr[i] = Integer.parseInt(srr[i].trim());
+    }
+    System.out.print(LinearSearchRecursive(arr, n, key, 0));
+    sc.close();
+
   }
   // public static int Linearsearch(int arr[],int n, int key){
-  //   for(int i =0;i<n;i++){
-  //     if( arr[i]==key){
-  //       return i;
-  //     }
-    
-  //   }  
-  //   return -1;
-  //   }
+  // for(int i =0;i<n;i++){
+  // if( arr[i]==key){
+  // return i;
+  // }
+
+  // }
+  // return -1;
+  // }
   public static int LinearSearchRecursive(int arr[], int n, int key, int index) {
     if (index >= n) {
-        return -1; // not found
+      return -1; // not found
     }
     if (arr[index] == key) {
-        return index;
+      return index;
     }
     return LinearSearchRecursive(arr, n, key, index + 1);
-}
   }
-  
+}
 
+// Question change
+// import java.util.Scanner;// Please make sure that the class name is 'Main'
+// class Main{
+// public static void main(String[] args){
+// Scanner sc = new Scanner(System.in);
+// // Consume newline left-over
+// int n = sc.nextInt();
+
+// // String[] srr = s.split(" ");
+// // int n = srr.length;
+// int[] arr = new int[n];
+// for (int i = 0; i < n; i++) {
+// arr[i] = sc.nextInt();
+// } int key = sc.nextInt();
+// System.out.print(LinearSearchRecursive(arr, n, key, 0));
+// sc.close();
+
+// //write your code here
+// }
+// public static int LinearSearchRecursive(int arr[], int n, int key, int index)
+// {
+// if (index >= n) {
+// return -1; // not found
+// }
+// if (arr[index] == key) {
+// return index;
+// }
+// return LinearSearchRecursive(arr, n, key, index + 1);
+// }
+// }
