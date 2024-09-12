@@ -9,6 +9,7 @@ public class UBsearch {
       arr[i] = sc.nextInt();
     }
     int key = sc.nextInt();
+    sc.close();
     // int result = uniformBinarySearch(arr, key);
     System.out.println(uniformBinarySearch(arr, key));
   }
@@ -37,8 +38,11 @@ public class UBsearch {
       } else {
         index += lookup_table[++co];
       }
+      if (index < 0 || index >= arr.length) {
+        return -1; // key not found
+      }
     }
-    return index;
+    return -1; // key not found
   }
 
 }
