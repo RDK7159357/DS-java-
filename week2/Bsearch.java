@@ -1,3 +1,4 @@
+// package week2;
 import java.util.Scanner;
 import java.util.Arrays;// Please make sure that the class name is 'Main'
 
