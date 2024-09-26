@@ -1,3 +1,4 @@
+package DSbootcamp;
 import java.util.Arrays;
 
 public class Reading_arrwithoutSc {
