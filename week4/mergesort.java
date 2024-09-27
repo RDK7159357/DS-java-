@@ -27,7 +27,7 @@ public class mergesort {
         int n2=right -mid;
         int []leftArray=new int[n1];
         int []rightArray=new int[n2];
-        System.arraycopy(arr, left, leftArray, 0, n2);
+        System.arraycopy(arr, left, leftArray, 0, n1);
         System.arraycopy(arr, mid+1, rightArray, 0, n2);
         int i=0,j=0;
         int k=left;
