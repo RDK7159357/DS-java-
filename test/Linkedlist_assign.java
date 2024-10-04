@@ -1,3 +1,4 @@
+package test;
 import java.util.*;
 public class Linkedlist_assign {
     public static void main(String[] args) {
