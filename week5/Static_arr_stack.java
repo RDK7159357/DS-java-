@@ -1,16 +1,26 @@
 package week5;
+import java.util.Scanner;
 
 public class Static_arr_stack {
     public static void main(String[] args) {
-        Stack stack = new Stack(5);
-        stack.push(10);
-        stack.push(20);
-        stack.push(30);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter size: ");
+        int n = sc.nextInt();
+        Stack stack = new Stack(n);
+        System.out.println("Enter the elements to push: ");
+        for(int i=0;i<n;i++){
+            stack.push(sc.nextInt());
+        }
+
+        // stack.push(10);
+        // stack.push(20);
+        // stack.push(30);
         stack.display();
         System.out.println("Top ele is: " + stack.peek());
         stack.pop();
         stack.display();
         System.out.println("size of stack: " + stack.size());
+        sc.close();
     }
 }
 
