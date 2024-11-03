@@ -19,26 +19,26 @@ public class Singlylinkedlist {
         if (head == null) {
             head = newNode;
         } else {
-            Node current = head;
-            while (current.next != null) {
-                current = current.next;
+            Node ptr = head;
+            while (ptr.next != null) {
+                ptr = ptr.next;
             }
-            current.next = newNode;
+            ptr.next = newNode;
         }
     }
 
     // Update the value of a node at a specified index
     public void updateNode(String val, int index) {
-        Node current = head;
+        Node ptr = head;
         int count = 0;
 
-        while (current != null) {
+        while (ptr != null) {
             if (count == index) {
-                current.data = val;
+                ptr.data = val;
                 return;
             }
             count++;
-            current = current.next;
+            ptr = ptr.next;
         }
 
         System.out.println("Index out of bounds");
@@ -61,11 +61,11 @@ public class Singlylinkedlist {
             return;
         }
 
-        Node current = head;
-        while (current.next.next != null) {
-            current = current.next;
+        Node ptr = head;
+        while (ptr.next.next != null) {
+            ptr = ptr.next;
         }
-        current.next = null;
+        ptr.next = null;
     }
 
     // Remove a node at a specified index
@@ -79,16 +79,16 @@ public class Singlylinkedlist {
             return;
         }
 
-        Node current = head;
+        Node ptr = head;
         int count = 0;
 
-        while (current != null && current.next != null) {
+        while (ptr != null && ptr.next != null) {
             if (count == index - 1) {
-                current.next = current.next.next;
+                ptr.next = ptr.next.next;
                 return;
             }
             count++;
-            current = current.next;
+            ptr = ptr.next;
         }
 
         System.out.println("Index out of bounds");
@@ -105,14 +105,14 @@ public class Singlylinkedlist {
             return;
         }
 
-        Node current = head;
+        Node ptr = head;
 
-        while (current.next != null) {
-            if (current.next.data.equals(data)) {
-                current.next = current.next.next;
+        while (ptr.next != null) {
+            if (ptr.next.data.equals(data)) {
+                ptr.next = ptr.next.next;
                 return;
             }
-            current = current.next;
+            ptr = ptr.next;
         }
 
         System.out.println("Node not found");
@@ -121,11 +121,11 @@ public class Singlylinkedlist {
     // Return the size of the linked list
     public int sizeOfLL() {
         int size = 0;
-        Node current = head;
+        Node ptr = head;
 
-        while (current != null) {
+        while (ptr != null) {
             size++;
-            current = current.next;
+            ptr = ptr.next;
         }
 
         return size;
@@ -133,11 +133,11 @@ public class Singlylinkedlist {
 
     // Print all nodes in the linked list
     public void printLL() {
-        Node current = head;
+        Node ptr = head;
 
-        while (current != null) {
-            System.out.print(current.data + " -> ");
-            current = current.next;
+        while (ptr != null) {
+            System.out.print(ptr.data + " -> ");
+            ptr = ptr.next;
         }
         System.out.println("null");
     }
