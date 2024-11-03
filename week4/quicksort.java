@@ -45,8 +45,10 @@ public class quicksort {
             // If i and j have not crossed each other, swap the elements at i and j
             if (i <= j) swap(arr, i, j);
         }
+        System.out.println(Arrays.toString(arr));
         // Swap the pivot element with the element at j
         swap(arr, low, j);
+        System.out.println(Arrays.toString(arr));
         // Return the index of the pivot element
         return j;
     } 

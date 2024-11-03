@@ -14,7 +14,8 @@ public class Circular_Q {
 
     // Enqueue operation to add an element to the queue
     public void enqueue(int data) {
-        if ((rear + 1) % size == front) {
+        if ((rear + 1) % size == front)
+         {
             System.out.println("Queue is Full");
             return; // Queue is full
         }
