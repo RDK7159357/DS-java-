@@ -1,5 +1,6 @@
 package week7;
 
+import java.util.Scanner;
 import java.util.Stack;
 
 class Node {
@@ -52,10 +53,13 @@ public class Pal_LL {
 
     public static void main(String[] args) {
         Pal_LL sol = new Pal_LL();
-        sol.Insert_LL_end(1);
-        sol.Insert_LL_end(2);
-        // sol.Insert_LL_end(2);
-        // sol.Insert_LL_end(1);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter size: ");
+        int n = sc.nextInt();    
+        for(int i=0;i<n;i++){
+            sol.Insert_LL_end(sc.nextInt());
+        }
+        sc.close();
         System.out.println(sol.isPalindrome(sol.head));
     }
 }

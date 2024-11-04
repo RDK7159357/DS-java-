@@ -1,4 +1,5 @@
 package week7;
+import java.util.Scanner;
 import java.util.Stack;
 
 class Node{
@@ -51,11 +52,14 @@ public class Rev_LL {
 
     }
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         Rev_LL sol = new Rev_LL(); 
-        sol.Insert_LL_end(0);
-        sol.Insert_LL_end(1);
-        sol.Insert_LL_end(6);
-        sol.Insert_LL_end(9);
+        System.out.print("Enter size: ");
+        int n = sc.nextInt();
+        System.out.println("Enter ele: ");
+        for(int i =0;i<n;i++){
+            sol.Insert_LL_end(sc.nextInt());
+        }
         sol.display_LL();
         System.out.println();
         sol.rev_ll();

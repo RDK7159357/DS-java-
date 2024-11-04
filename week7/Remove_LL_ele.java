@@ -1,5 +1,7 @@
 package week7;
 
+import java.util.Scanner;
+
 class ListNode {
     int val;
     ListNode next;
@@ -11,6 +13,26 @@ class ListNode {
 }
 
 public class Remove_LL_ele {
+    ListNode head;
+
+    // Constructor to initialize an empty linked list
+    Remove_LL_ele() {
+        head = null;
+    }
+
+    // Method to insert a node at the end of the linked list
+    void insertAtEnd(int data) {
+        ListNode newNode = new ListNode(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            ListNode current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
     
     // Method to remove all nodes with a specified value
     public ListNode removeElements(ListNode head, int val) {
@@ -30,40 +52,6 @@ public class Remove_LL_ele {
 
         return dummy.next; // Return the new head (skipping any nodes removed at the head)
     }
-
-    public static void main(String[] args) {
-        Remove_LL_ele solution = new Remove_LL_ele();
-
-        // Example 1: head = [1, 2, 6, 3, 4, 5, 6], val = 6
-        ListNode head1 = new ListNode(1);
-        head1.next = new ListNode(2);
-        head1.next.next = new ListNode(6);
-        head1.next.next.next = new ListNode(3);
-        head1.next.next.next.next = new ListNode(4);
-        head1.next.next.next.next.next = new ListNode(5);
-        head1.next.next.next.next.next.next = new ListNode(6);
-
-        ListNode newHead1 = solution.removeElements(head1, 6);
-        System.out.print("List after removing 6: ");
-        printList(newHead1); // Expected Output: [1, 2, 3, 4, 5]
-
-        // Example 2: head = [], val = 1
-        ListNode head2 = null;
-        ListNode newHead2 = solution.removeElements(head2, 1);
-        System.out.print("List after removing 1 from empty list: ");
-        printList(newHead2); // Expected Output: []
-
-        // Example 3: head = [7, 7, 7, 7], val = 7
-        ListNode head3 = new ListNode(7);
-        head3.next = new ListNode(7);
-        head3.next.next = new ListNode(7);
-        head3.next.next.next = new ListNode(7);
-
-        ListNode newHead3 = solution.removeElements(head3, 7);
-        System.out.print("List after removing 7: ");
-        printList(newHead3); // Expected Output: []
-
-    }
     
     // Helper method to print the linked list
     private static void printList(ListNode head) {
@@ -73,5 +61,28 @@ public class Remove_LL_ele {
             current = current.next;
         }
         System.out.println("null");
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Remove_LL_ele sol = new Remove_LL_ele();
+
+        // Taking input for the linked list
+        System.out.print("Enter the number of elements in the list: ");
+        int n = sc.nextInt();
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            sol.insertAtEnd(sc.nextInt());
+        }
+
+        // Taking input for the value to remove
+        System.out.print("Enter the value to remove: ");
+        int val = sc.nextInt();
+        sc.close();
+
+        // Removing specified elements and displaying the modified list
+        ListNode newHead = sol.removeElements(sol.head, val);
+        System.out.print("List after removing " + val + ": ");
+        printList(newHead);
     }
 }

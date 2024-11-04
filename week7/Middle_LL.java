@@ -1,5 +1,7 @@
 package week7;
 
+import java.util.Scanner;
+
 class Node {
     int data;
     Node next;
@@ -38,11 +40,16 @@ public class Middle_LL {
         System.out.println(slow.data);
     }
     public static void main(String[] args) {
-        Middle_LL sol = new Middle_LL();
-        sol.Insert_LL_end(0);
-        sol.Insert_LL_end(2);
-        sol.Insert_LL_end(3);
-        sol.Insert_LL_end(5);
+           Middle_LL sol = new Middle_LL();
+           Scanner sc = new Scanner(System.in);
+        System.out.print("Enter size: ");
+        int n = sc.nextInt();    
+      
+        for(int i=0;i<n;i++){
+            sol.Insert_LL_end(sc.nextInt());
+        }
+   
+        sc.close();
         sol.Print_Middle(sol.head);
     }
     

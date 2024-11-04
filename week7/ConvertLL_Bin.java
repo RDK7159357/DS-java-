@@ -1,5 +1,7 @@
 package week7;
 
+import java.util.Scanner;
+
 class Node {
     int data;
     Node next;
@@ -38,10 +40,15 @@ public class ConvertLL_Bin {
         }
     }
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         ConvertLL_Bin sol = new ConvertLL_Bin();
-        sol.Insert_LL_end(0);
-        sol.Insert_LL_end(1);
-        sol.Insert_LL_end(0);
+        System.out.print("Enter size: ");
+        int n = sc.nextInt();    
+        System.out.println("Enter ele: ");
+        for(int i=0;i<n;i++){
+            sol.Insert_LL_end(sc.nextInt());
+        }
+        sc.close();
         System.out.println(sol.getDecimalValue(sol.head));
     }
     
