@@ -60,6 +60,7 @@ public class Rev_LL {
         for(int i =0;i<n;i++){
             sol.Insert_LL_end(sc.nextInt());
         }
+        sc.close();
         sol.display_LL();
         System.out.println();
         sol.rev_ll();
