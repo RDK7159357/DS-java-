@@ -2,23 +2,23 @@ package week7;
 
 import java.util.Scanner;
 
-class Node {
+class Node2 {
     int data;
-    Node next;
+    Node2 next;
 
-    Node(int data) {
+    Node2(int data) {
         this.data = data;
         this.next = null;
     }
 }
 public class ConvertLL_Bin {
-    Node head;
+    Node2 head;
     ConvertLL_Bin(){
         head = null;
     }
-    public int getDecimalValue(Node head) {
+    public int getDecimalValue(Node2 head) {
         int decimalValue = 0;
-        Node Ptr = head;
+        Node2 Ptr = head;
         
         while (Ptr != null) {
             decimalValue = (decimalValue << 1) | Ptr.data;
@@ -28,11 +28,11 @@ public class ConvertLL_Bin {
         return decimalValue;
     }
     void Insert_LL_end(int data) {
-        Node newNode = new Node(data);
+        Node2 newNode = new Node2(data);
         if (head == null) {
             head = newNode;
         } else {
-            Node Ptr = head;
+            Node2 Ptr = head;
             while (Ptr.next != null) {
                 Ptr = Ptr.next;
             }

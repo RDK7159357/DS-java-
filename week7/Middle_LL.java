@@ -2,37 +2,37 @@ package week7;
 
 import java.util.Scanner;
 
-class Node {
+class Node3 {
     int data;
-    Node next;
+    Node3 next;
 
-    Node(int data) {
+    Node3(int data) {
         this.data = data;
         this.next = null;
     }
 }
 public class Middle_LL {
-    Node head;
+    Node3 head;
 
     Middle_LL() {
         head = null;
     }
 
     void Insert_LL_end(int data) {
-        Node newNode = new Node(data);
+        Node3 newNode = new Node3(data);
         if (head == null) {
             head = newNode;
         } else {
-            Node Ptr = head;
+            Node3 Ptr = head;
             while (Ptr.next != null) {
                 Ptr = Ptr.next;
             }
             Ptr.next = newNode;
         }
     }
-    void Print_Middle(Node head){
-        Node slow = head;
-        Node fast = head;
+    void Print_Middle(Node3 head){
+        Node3 slow = head;
+        Node3 fast = head;
         while(fast!=null && fast.next!=null){
             slow=slow.next;
             fast=fast.next.next;

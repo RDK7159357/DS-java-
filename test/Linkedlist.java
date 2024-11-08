@@ -10,17 +10,17 @@ public class Linkedlist {
         obj.traverse();
     }  
 }
-class Node {
+class Node1 {
 int data;
-Node next;
-Node(int data){
+Node1 next;
+Node1(int data){
     this.data=data;
     this.next=null;
 }
 }
 
 class SingleLinkedList{
-    Node head ;
+    Node1 head ;
     Scanner sc;
     SingleLinkedList(){
         head =null;
@@ -29,12 +29,12 @@ class SingleLinkedList{
     void Create(){
         for(int i=0;i<5;i++){
             int d=sc.nextInt();
-            Node newNode=new Node(d);
+            Node1 newNode=new Node1(d);
             if(head==null){
                 head=newNode;
             }
             else{
-                Node t;
+                Node1 t;
                 t=head;
                 while(t.next!=null){
                     t=t.next;
@@ -44,7 +44,7 @@ class SingleLinkedList{
         }
     }
     void traverse(){
-        Node t;
+        Node1 t;
         t=head;
         System.out.println("\n Linked list data: ");
         while(t!=null){
@@ -58,12 +58,12 @@ class SingleLinkedList{
         int cmt=0;
         for(int i=0;i<n;i++){
             cmt++;
-            Node newnode = new Node(arr[i]);
+            Node1 newnode = new Node1(arr[i]);
             if(head==null){
                 head = newnode;
             }
             else{
-                Node t;
+                Node1 t;
                 t=head;
                 while(t.next!=null){
                     t=t.next;
@@ -81,12 +81,12 @@ class SingleLinkedList{
             cmt++;
             if(arr[i]%2==1){
 
-                Node newnode= new Node(arr[i]);
+                Node1 newnode= new Node1(arr[i]);
                 if(head==null){
                     head=newnode;
                 }
                 else{
-                    Node t;
+                    Node1 t;
                     t=head;
                     while(t.next!=null){
                         t=t.next;
@@ -106,12 +106,12 @@ class SingleLinkedList{
         for(int i=0;i<n;i++){
             cmt++;
             if(arr[i]%2==0){
-                Node newnode= new Node(arr[i]);
+                Node1 newnode= new Node1(arr[i]);
                 if(head==null){
                     head=newnode;
                 }
                 else{
-                    Node t;
+                    Node1 t;
                     t=head;
                     while(t.next!=null){
                         t=t.next;
@@ -125,17 +125,17 @@ class SingleLinkedList{
 
     }
     void insert_at_beg(int d){
-        Node newnode=new Node(d);
+        Node1 newnode=new Node1(d);
         newnode.next=head;
         head=newnode;
     }
     void insert_at_end(int d) {
-        Node newnode = new Node(d);  // Create a new node with the given data
+        Node1 newnode = new Node1(d);  // Create a new node with the given data
         
         if (head == null) {  // Case 1: The list is empty
             head = newnode;  // The new node becomes the head of the list
         } else {
-            Node t = head;  // Start from the head node
+            Node1 t = head;  // Start from the head node
             
             // Traverse to the last node
             while (t.next != null) {

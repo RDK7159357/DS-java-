@@ -3,11 +3,11 @@ package week7;
 import java.util.Scanner;
 import java.util.Stack;
 
-class Node {
+class Node4 {
     int data;
-    Node next;
+    Node4 next;
 
-    Node(int data) {
+    Node4(int data) {
         this.data = data;
         this.next = null;
     }
@@ -15,18 +15,18 @@ class Node {
 
 public class Pal_LL {
     Stack<Integer> stack = new Stack<>();
-    Node head;
+    Node4 head;
 
     Pal_LL() {
         head = null;
     }
 
     void Insert_LL_end(int data) {
-        Node newNode = new Node(data);
+        Node4 newNode = new Node4(data);
         if (head == null) {
             head = newNode;
         } else {
-            Node Ptr = head;
+            Node4 Ptr = head;
             while (Ptr.next != null) {
                 Ptr = Ptr.next;
             }
@@ -34,8 +34,8 @@ public class Pal_LL {
         }
     }
 
-    public boolean isPalindrome(Node head) {
-        Node Ptr = head;
+    public boolean isPalindrome(Node4 head) {
+        Node4 Ptr = head;
         while(Ptr!=null){
             stack.push(Ptr.data);
             Ptr=Ptr.next;

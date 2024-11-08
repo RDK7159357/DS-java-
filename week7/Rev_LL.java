@@ -2,10 +2,10 @@ package week7;
 import java.util.Scanner;
 import java.util.Stack;
 
-class Node{
+class Node5{
     int data;
-    Node next;
-    Node(int data){
+    Node5 next;
+    Node5(int data){
         this.data=data;
         this.next=null;
     }
@@ -13,17 +13,17 @@ class Node{
 
 public class Rev_LL {     
     Stack<Integer> stack=new Stack<>();
-    Node head;
+    Node5 head;
     Rev_LL(){
         head=null;
     }
     void Insert_LL_end(int data){
-        Node newNode = new Node(data);
+        Node5 newNode = new Node5(data);
         if(head==null){
             head = newNode;
         }
         else{
-            Node Ptr = head;
+            Node5 Ptr = head;
             while(Ptr.next!=null){
                 Ptr=Ptr.next;
             }
@@ -31,7 +31,7 @@ public class Rev_LL {
         }
     }
     void rev_ll(){
-        Node Ptr = head;
+        Node5 Ptr = head;
         while(Ptr!=null){
             stack.push(Ptr.data);
             Ptr=Ptr.next;
@@ -43,7 +43,7 @@ public class Rev_LL {
     }
 
     void display_LL(){
-        Node Ptr = head;
+        Node5 Ptr = head;
         while(Ptr!=null){
             System.out.print(Ptr.data+"->");
             Ptr=Ptr.next;

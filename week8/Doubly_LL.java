@@ -2,12 +2,12 @@ package week8;
 import java.util.Scanner;
 
 
-class Node {
+class Node1 {
     int data;
-    Node next;
-    Node prev;
+    Node1 next;
+    Node1 prev;
 
-    Node(int data) {
+    Node1(int data) {
         this.data = data;
         this.next = null;
         this.prev = null;
@@ -15,7 +15,7 @@ class Node {
 }
 
 class Doubly_LL {
-    Node head;
+    Node1 head;
     int ctr;
 
     Doubly_LL() {
@@ -25,7 +25,7 @@ class Doubly_LL {
 
     // Insert a node at the beginning
     void insertBeg(int data) {
-        Node newNode = new Node(data);
+        Node1 newNode = new Node1(data);
         if (head == null) {
             head = newNode;
         } else {
@@ -38,11 +38,11 @@ class Doubly_LL {
 
     // Insert a node at the end
     void insertEnd(int data) {
-        Node newNode = new Node(data);
+        Node1 newNode = new Node1(data);
         if (head == null) {
             head = newNode;
         } else {
-            Node temp = head;
+            Node1 temp = head;
             while (temp.next != null) {
                 temp = temp.next;
             }
@@ -74,7 +74,7 @@ class Doubly_LL {
         if (head.next == null) {  // Only one node in the list
             head = null;
         } else {
-            Node temp = head;
+            Node1 temp = head;
             while (temp.next != null) {
                 temp = temp.next;
             }
@@ -90,11 +90,11 @@ class Doubly_LL {
             return;
         }
 
-        Node newNode = new Node(data);
+        Node1 newNode = new Node1(data);
         if (pos == 1) {
             insertBeg(data);
         } else {
-            Node temp = head;
+            Node1 temp = head;
             for (int i = 1; i < pos - 1; i++) {
                 temp = temp.next;
             }
@@ -118,7 +118,7 @@ class Doubly_LL {
         if (pos == 1) {
             deleteBeg();
         } else {
-            Node temp = head;
+            Node1 temp = head;
             for (int i = 1; i < pos; i++) {
                 temp = temp.next;
             }
@@ -138,7 +138,7 @@ class Doubly_LL {
             System.out.println("List is empty.");
             return;
         }
-        Node temp = head;
+        Node1 temp = head;
         while (temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.next;
@@ -152,7 +152,7 @@ class Doubly_LL {
             System.out.println("List is empty.");
             return;
         }
-        Node temp = head;
+        Node1 temp = head;
         while (temp.next != null) {
             temp = temp.next;
         }

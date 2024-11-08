@@ -2,18 +2,18 @@ package week7;
 
 import java.util.Scanner;
 
-class ListNode {
+class ListNode1 {
     int val;
-    ListNode next;
+    ListNode1 next;
 
-    ListNode(int val) {
+    ListNode1(int val) {
         this.val = val;
         this.next = null;
     }
 }
 
 public class Remove_LL_ele {
-    ListNode head;
+    ListNode1 head;
 
     // Constructor to initialize an empty linked list
     Remove_LL_ele() {
@@ -22,11 +22,11 @@ public class Remove_LL_ele {
 
     // Method to insert a node at the end of the linked list
     void insertAtEnd(int data) {
-        ListNode newNode = new ListNode(data);
+        ListNode1 newNode = new ListNode1(data);
         if (head == null) {
             head = newNode;
         } else {
-            ListNode current = head;
+            ListNode1 current = head;
             while (current.next != null) {
                 current = current.next;
             }
@@ -35,11 +35,11 @@ public class Remove_LL_ele {
     }
     
     // Method to remove all nodes with a specified value
-    public ListNode removeElements(ListNode head, int val) {
+    public ListNode1 removeElements(ListNode1 head, int val) {
         // Dummy node to handle cases where the head itself needs to be removed
-        ListNode dummy = new ListNode(0);
+        ListNode1 dummy = new ListNode1(0);
         dummy.next = head;
-        ListNode current = dummy;
+        ListNode1 current = dummy;
 
         while (current.next != null) {
             if (current.next.val == val) {
@@ -54,8 +54,8 @@ public class Remove_LL_ele {
     }
     
     // Helper method to print the linked list
-    private static void printList(ListNode head) {
-        ListNode current = head;
+    private static void printList(ListNode1 head) {
+        ListNode1 current = head;
         while (current != null) {
             System.out.print(current.val + " -> ");
             current = current.next;
@@ -81,7 +81,7 @@ public class Remove_LL_ele {
         sc.close();
 
         // Removing specified elements and displaying the modified list
-        ListNode newHead = sol.removeElements(sol.head, val);
+        ListNode1 newHead = sol.removeElements(sol.head, val);
         System.out.print("List after removing " + val + ": ");
         printList(newHead);
     }

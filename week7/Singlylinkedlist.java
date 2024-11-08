@@ -1,25 +1,25 @@
 package week7;
 
-class Node {
+class Node6 {
     String data;
-    Node next;
+    Node6 next;
 
-    Node(String data) {
+    Node6(String data) {
         this.data = data;
         this.next = null;
     }
 }
 
 public class Singlylinkedlist {
-    private Node head;
+    private Node6 head;
 
     // Insert a node at the end of the linked list
     public void insertAtEnd(String data) {
-        Node newNode = new Node(data);
+        Node6 newNode = new Node6(data);
         if (head == null) {
             head = newNode;
         } else {
-            Node ptr = head;
+            Node6 ptr = head;
             while (ptr.next != null) {
                 ptr = ptr.next;
             }
@@ -29,7 +29,7 @@ public class Singlylinkedlist {
 
     // Update the value of a node at a specified index
     public void updateNode(String val, int index) {
-        Node ptr = head;
+        Node6 ptr = head;
         int count = 0;
 
         while (ptr != null) {
@@ -61,7 +61,7 @@ public class Singlylinkedlist {
             return;
         }
 
-        Node ptr = head;
+        Node6 ptr = head;
         while (ptr.next.next != null) {
             ptr = ptr.next;
         }
@@ -79,7 +79,7 @@ public class Singlylinkedlist {
             return;
         }
 
-        Node ptr = head;
+        Node6 ptr = head;
         int count = 0;
 
         while (ptr != null && ptr.next != null) {
@@ -105,7 +105,7 @@ public class Singlylinkedlist {
             return;
         }
 
-        Node ptr = head;
+        Node6 ptr = head;
 
         while (ptr.next != null) {
             if (ptr.next.data.equals(data)) {
@@ -115,13 +115,13 @@ public class Singlylinkedlist {
             ptr = ptr.next;
         }
 
-        System.out.println("Node not found");
+        System.out.println("Node6 not found");
     }
 
     // Return the size of the linked list
     public int sizeOfLL() {
         int size = 0;
-        Node ptr = head;
+        Node6 ptr = head;
 
         while (ptr != null) {
             size++;
@@ -133,7 +133,7 @@ public class Singlylinkedlist {
 
     // Print all nodes in the linked list
     public void printLL() {
-        Node ptr = head;
+        Node6 ptr = head;
 
         while (ptr != null) {
             System.out.print(ptr.data + " -> ");
