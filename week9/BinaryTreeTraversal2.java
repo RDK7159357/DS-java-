@@ -1,6 +1,7 @@
 package week9;
 import java.util.Scanner;
 
+// Node class representing a node in the binary tree
 class Node {
     int data;
     Node left, right;
@@ -11,6 +12,7 @@ class Node {
     }
 }
 
+// Binary Tree class with traversal methods
 class BT {
     Node root;
 
@@ -41,7 +43,7 @@ class BT {
         return root;
     }
 
-    // Method for inorder traversal
+    // Method for inorder traversal: Left -> Root -> Right
     void inorder(Node root) {
         if (root != null) {
             inorder(root.left);
@@ -50,7 +52,7 @@ class BT {
         }
     }
 
-    // Method for preorder traversal
+    // Method for preorder traversal: Root -> Left -> Right
     void preorder(Node root) {
         if (root != null) {
             System.out.print(root.data + " ");
@@ -59,13 +61,28 @@ class BT {
         }
     }
 
-    // Method for postorder traversal
+    // Method for postorder traversal: Left -> Right -> Root
     void postorder(Node root) {
         if (root != null) {
             postorder(root.left);
             postorder(root.right);
             System.out.print(root.data + " ");
         }
+    }
+
+    // Method to invoke all traversals
+    void displayTraversals() {
+        System.out.println("Inorder traversal:");
+        inorder(root);
+        System.out.println();
+
+        System.out.println("Preorder traversal:");
+        preorder(root);
+        System.out.println();
+
+        System.out.println("Postorder traversal:");
+        postorder(root);
+        System.out.println();
     }
 }
 
@@ -74,26 +91,24 @@ public class BinaryTreeTraversal2 {
         BT tree = new BT();
         Scanner scanner = new Scanner(System.in);
 
+        // Take number of nodes input
         System.out.println("Enter number of nodes to insert:");
-        int n = scanner.nextInt();
+        int n;
+        while (true) {
+            n = scanner.nextInt();
+            if (n > 0) break;
+            System.out.println("Please enter a positive number.");
+        }
 
+        // Take node values input
         System.out.println("Enter node values:");
         for (int i = 0; i < n; i++) {
             int data = scanner.nextInt();
             tree.insert(data);
         }
 
-        System.out.println("Inorder traversal:");
-        tree.inorder(tree.root);
-        System.out.println();
-
-        System.out.println("Preorder traversal:");
-        tree.preorder(tree.root);
-        System.out.println();
-
-        System.out.println("Postorder traversal:");
-        tree.postorder(tree.root);
-        System.out.println();
+        // Display all traversals
+        tree.displayTraversals();
 
         scanner.close();
     }
