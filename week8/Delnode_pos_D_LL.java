@@ -1,9 +1,9 @@
 package week8;
 
-class Node {
+class Noded {
     int data;
-    Node next, prev;
-    Node(int data) {
+    Noded next, prev;
+    Noded(int data) {
         this.data = data;
         this.next = null;
         this.prev = null;
@@ -12,7 +12,7 @@ class Node {
 
 public class Delnode_pos_D_LL {
     // Function to delete a given node from the doubly linked list
-    static Node deleteNode(Node head, Node del) {
+    static Noded deleteNode(Noded head, Noded del) {
         // If list or del is null, return
         if (head == null || del == null)
             return head;
@@ -33,13 +33,13 @@ public class Delnode_pos_D_LL {
     }
     
     // Function to delete the node at given position
-    static Node deleteNodeAtGivenPos(Node head, int n) {
+    static Noded deleteNodeAtGivenPos(Noded head, int n) {
         // If list is empty or invalid position, return
         if (head == null || n <= 0)
             return head;
             
         // Store head node
-        Node current = head;
+        Noded current = head;
         
         // Traverse to the nth node
         for (int i = 1; current != null && i < n; i++)
@@ -54,8 +54,8 @@ public class Delnode_pos_D_LL {
     }
     
     // Function to print the doubly linked list
-    static void printList(Node head) {
-        Node current = head;
+    static void printList(Noded head) {
+        Noded current = head;
         System.out.print("Doubly Linked List: ");
         while (current != null) {
             System.out.print(current.data + " ");

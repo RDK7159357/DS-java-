@@ -1,10 +1,10 @@
 package week9;
 
-class Node {
+class Node3 {
     int data;
-    Node left, right;
+    Node3 left, right;
 
-    public Node(int data) {
+    public Node3(int data) {
         this.data = data;
         this.left = this.right = null;
     }
@@ -13,10 +13,10 @@ class Node {
 public class BinaryTreeInsertion3 {
 
     // Method to insert a node into the binary search tree
-    static Node insert(Node root, int key) {
+    static Node3 insert(Node3 root, int key) {
         // If the tree is empty, return a new node
         if (root == null) {
-            root = new Node(key);
+            root = new Node3(key);
             return root;
         }
 
@@ -32,7 +32,7 @@ public class BinaryTreeInsertion3 {
     }
 
     // Method to perform inorder traversal
-    static void inorder(Node root) {
+    static void inorder(Node3 root) {
         if (root != null) {
             inorder(root.left);
             System.out.print(root.data + " ");
@@ -41,7 +41,7 @@ public class BinaryTreeInsertion3 {
     }
 
     public static void main(String[] args) {
-        Node root = null;
+        Node3 root = null;
         
         // Insert nodes into the binary search tree
         root = insert(root, 50);
