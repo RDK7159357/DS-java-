@@ -35,8 +35,8 @@ public class MaximumDepthofTree4 {
         root.right = new Node4(3);
         root.left.left = new Node4(4);
         root.left.right = new Node4(5);
-        root.right.right = new Node4(6);
-        root.left.left.left = new Node4(7);
+        // root.right.right = new Node4(6);
+        // root.left.left.left = new Node4(7);
 
         // Calculate and print the maximum depth of the tree
         System.out.println("The maximum depth of the tree is: " + maxDepth(root));

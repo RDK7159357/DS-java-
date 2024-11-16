@@ -49,8 +49,8 @@ public class BinaryTreeInsertion3 {
         root = insert(root, 20);
         root = insert(root, 40);
         root = insert(root, 70);
-        root = insert(root, 60);
-        root = insert(root, 80);
+        // root = insert(root, 60);
+        // root = insert(root, 80);
 
         // Print inorder traversal of the binary search tree
         System.out.println("Inorder traversal of the binary search tree:");
