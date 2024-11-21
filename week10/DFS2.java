@@ -70,10 +70,9 @@ public class DFS2 {
         int n = sc.nextInt();
 
         // Add edges to the graph
+        System.out.println("Enter source to destination nodes: ");
         for (int i = 0; i < n; i++) {
-            System.out.print("Enter source node: ");
             int u = sc.nextInt();
-            System.out.print("Enter the destination node: ");
             int v = sc.nextInt();
             g.addEdge(u, v);
         }

@@ -58,12 +58,10 @@ public class BFS1 {
         System.out.print("Enter number of edges: ");
         int n = sc.nextInt();
         int i = 0;
-
+        System.out.println("Enter source to destination nodes: ");
         // Add edges to the graph
         while (i < n) {
-            System.out.print("Enter source node: ");
             int u = sc.nextInt();
-            System.out.print("Enter the destination node: ");
             int v = sc.nextInt();
             bfsGraph.addEdge(u, v);
             i++;
