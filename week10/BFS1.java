@@ -20,7 +20,7 @@ public class BFS1 {
 
     // Perform BFS traversal
     // root node is "s"
-    public void BFT(int s) {
+    public void BFS(int s) {
         // To keep track of visited nodes
         Set<Integer> visited = new HashSet<>();
         // Queue for BFS
@@ -74,7 +74,7 @@ public class BFS1 {
         int root = sc.nextInt();
         
         // Start BFS traversal from the root node
-        bfsGraph.BFT(root);
+        bfsGraph.BFS(root);
 
         sc.close(); // Close the scanner after use
     }
