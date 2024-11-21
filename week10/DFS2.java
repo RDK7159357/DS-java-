@@ -14,10 +14,8 @@ public class DFS2 {
 
     // Method to add an edge to the graph (directed edge from u to v)
     public void addEdge(int u, int v) {
-        // If the source node doesn't exist, create an entry with an empty list
-        // graph.computeIfAbsent(u, k -> new ArrayList<>()).add(v);
-        if (!graph.containsKey(u)) {
-            graph.put(u, new ArrayList<>());
+        if(!graph.containsKey(u)){
+            graph.put(u,new ArrayList<>());
         }
         graph.get(u).add(v);
     }
@@ -27,15 +25,14 @@ public class DFS2 {
         // Set to track visited nodes
         Set<Integer> visited = new HashSet<>();
 
-        // Stack for DFS traversal (can also be done recursively, but stack is explicit)
+        // Stack for DFS traversal
         Stack<Integer> stack = new Stack<>();
-        
+
         // Push the root node to start traversal
         stack.push(v);
 
-        // Start DFS traversal
         System.out.print("DFS Traversal starting from node " + v + ": ");
-        
+
         // While there are still nodes to visit
         while (!stack.isEmpty()) {
             // Pop a node from the stack
@@ -83,7 +80,7 @@ public class DFS2 {
 
         // Start DFS traversal from the root node
         g.DFS(root);
-        
+
         sc.close(); // Close the scanner after use
     }
 }

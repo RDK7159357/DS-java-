@@ -10,16 +10,14 @@ public class BFS1 {
     }
 
     // Add an edge to the graph
-    // u is the source node and v is the destination node. So the edge is between u and v
     public void addEdge(int u, int v) {
-        if (!graph.containsKey(u)) {
-            graph.put(u, new ArrayList<>());
+        if(!graph.containsKey(u)){
+            graph.put(u,new ArrayList<>());
         }
         graph.get(u).add(v);
     }
 
-    // Perform BFS traversal
-    // root node is "s"
+    // Perform BFS traversal starting from node 's'
     public void BFS(int s) {
         // To keep track of visited nodes
         Set<Integer> visited = new HashSet<>();
@@ -27,22 +25,22 @@ public class BFS1 {
         Queue<Integer> queue = new LinkedList<>();
         
         // Start with the source node
-        visited.add(s);
         queue.add(s);
+        visited.add(s); // Mark as visited when enqueued
 
         System.out.println("BFS Traversal starting from node " + s + ":");
-        
+
         while (!queue.isEmpty()) {
             // Dequeue a vertex from the queue
             int current = queue.poll();
             System.out.print(current + " ");
-            
+
             // Get all adjacent vertices of the dequeued vertex
             List<Integer> neighbors = graph.getOrDefault(current, new ArrayList<>());
             for (int neighbor : neighbors) {
                 if (!visited.contains(neighbor)) {
-                    visited.add(neighbor);
                     queue.add(neighbor);
+                    visited.add(neighbor); // Mark as visited when enqueued
                 }
             }
         }
@@ -57,18 +55,17 @@ public class BFS1 {
         // Take input for number of edges
         System.out.print("Enter number of edges: ");
         int n = sc.nextInt();
-        int i = 0;
         System.out.println("Enter source to destination nodes: ");
+
         // Add edges to the graph
-        while (i < n) {
+        for (int i = 0; i < n; i++) {
             int u = sc.nextInt();
             int v = sc.nextInt();
             bfsGraph.addEdge(u, v);
-            i++;
         }
 
         // Take input for root node to start BFS traversal
-        System.out.println("Enter the root node to start BFS traversal: ");
+        System.out.print("Enter the root node to start BFS traversal: ");
         int root = sc.nextInt();
         
         // Start BFS traversal from the root node
@@ -77,19 +74,3 @@ public class BFS1 {
         sc.close(); // Close the scanner after use
     }
 }
-
-        
-        
-        // Add edges to the graph
-        // bfsGraph.addEdge(1, 2);
-        // bfsGraph.addEdge(1, 3);
-        // bfsGraph.addEdge(2, 4);
-        // bfsGraph.addEdge(3, 5);
-        // bfsGraph.addEdge(4, 6);
-        // bfsGraph.addEdge(5, 6);
-        // bfsGraph.addEdge(6, 7);
-
-        // // Perform BFS traversal from node 1
-        // bfsGraph.BFT(1);
-    
-
