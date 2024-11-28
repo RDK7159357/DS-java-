@@ -1,18 +1,18 @@
 package week11;
 
-// Node class to represent each node of the Search_in_BST
-class Node {
+// Node1 class to represent each node of the Search_in_BST
+class Node1 {
     int key;
-    Node left, right;
+    Node1 left, right;
 
-    public Node(int item) {
+    public Node1(int item) {
         key = item;
         left = right = null;
     }
 }
 
 class Search_in_BST {
-    Node root;
+    Node1 root;
 
     // Constructor for Search_in_BST
     public Search_in_BST() {
@@ -25,10 +25,10 @@ class Search_in_BST {
     }
 
     // Recursive helper function for insertion
-    Node insertRec(Node root, int key) {
+    Node1 insertRec(Node1 root, int key) {
         // If the tree is empty, create a new node
         if (root == null) {
-            root = new Node(key);
+            root = new Node1(key);
             return root;
         }
 
@@ -43,12 +43,12 @@ class Search_in_BST {
     }
 
     // Method to search for a key in the Search_in_BST
-    Node search(int key) {
+    Node1 search(int key) {
         return searchRec(root, key);
     }
 
     // Recursive helper function for searching
-    Node searchRec(Node root, int key) {
+    Node1 searchRec(Node1 root, int key) {
         // Base case: root is null or key is present at root
         if (root == null || root.key == key) {
             return root;
@@ -69,7 +69,7 @@ class Search_in_BST {
     }
 
     // Recursive helper function for in-order traversal
-    void inorderRec(Node root) {
+    void inorderRec(Node1 root) {
         if (root != null) {
             inorderRec(root.left);
             System.out.print(root.key + " ");
@@ -96,7 +96,7 @@ class Search_in_BST {
 
         // Search for a key in the Search_in_BST
         int keyToSearch = 40;
-        Node result = tree.search(keyToSearch);
+        Node1 result = tree.search(keyToSearch);
         if (result != null) {
             System.out.println("\nKey " + keyToSearch + " found in the Search_in_BST.");
         } else {

@@ -1,26 +1,26 @@
 package week11;
 
-class Node {
+class Node2 {
     int key;
-    Node left, right;
+    Node2 left, right;
 
-    public Node(int item) {
+    public Node2(int item) {
         key = item;
         left = right = null;
     }
 }
 
 public class min_BST {
-    Node root;
+    Node2 root;
 
     public min_BST() {
         root = null;
     }
 
     // Helper method to recursively insert a key
-    Node insertRec(Node root, int key) {
+    Node2 insertRec(Node2 root, int key) {
         if (root == null) {
-            root = new Node(key);
+            root = new Node2(key);
             return root;
         }
         if (key < root.key) {
@@ -37,7 +37,7 @@ public class min_BST {
     }
 
     // Helper method to recursively search for a key
-    Node searchRec(Node root, int key) {
+    Node2 searchRec(Node2 root, int key) {
         if (root == null || root.key == key) {
             return root;
         }
@@ -48,12 +48,12 @@ public class min_BST {
     }
 
     // Search for a key in the BST
-    Node search(int key) {
+    Node2 search(int key) {
         return searchRec(root, key);
     }
 
     // Helper method for in-order traversal
-    void inorderRec(Node root) {
+    void inorderRec(Node2 root) {
         if (root != null) {
             inorderRec(root.left);
             System.out.print(root.key + " ");
@@ -67,7 +67,7 @@ public class min_BST {
     }
 
     // Method to find the minimum value in the BST
-    int findMin(Node root) {
+    int findMin(Node2 root) {
         if (root == null) {
             System.out.println("Tree is empty");
             return -1; // Or throw an exception if preferred
