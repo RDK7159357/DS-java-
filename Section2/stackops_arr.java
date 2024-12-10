@@ -1,7 +1,8 @@
-package week5;
+package Section2;
+
 import java.util.Scanner;
 
-public class Static_arr_stack {
+public class stackops_arr {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter size: ");
@@ -82,3 +83,4 @@ class Stack {
         System.out.println();
     }
 }
+
