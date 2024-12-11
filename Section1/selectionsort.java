@@ -32,8 +32,6 @@ public class selectionsort{
                 temp=arr[i];
                 arr[i]=arr[minindex];
                 arr[minindex]=temp;
-
-
               }
           }
 }

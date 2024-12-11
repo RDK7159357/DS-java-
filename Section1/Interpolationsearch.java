@@ -38,4 +38,19 @@ public class Interpolationsearch {
         return -1;
 
     }
+    public static int InterpolationRec(int arr[],int low,int high,int key){
+        if(low>high){
+            return -1;
+        }
+        int mid = low + ((high - arr[low])*(high - low))/arr[high] - arr[low];
+        if (arr[mid] == key){
+            return mid;
+        }
+        else if(arr[mid]>key){
+            return InterpolationRec(arr, low, mid - 1, key);
+        }
+        else{
+            return InterpolationRec(arr, mid+1, high, key);
+        }
+    }
 }
